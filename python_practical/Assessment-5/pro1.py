@@ -1,20 +1,12 @@
-import re
-
-class InvalidEmailError(Exception):
-    pass
-
-def validate_email(email):
-    pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
-    if not re.match(pattern, email):
-        raise InvalidEmailError("Invalid email format")
-
 try:
-    email = input("Enter your email address: ")
-    validate_email(email)
-    print("Email is valid ✅")
+    numerator = float(input("Enter numerator: "))
+    denominator = float(input("Enter denominator: "))
+    
+    result = numerator / denominator
+    print("Result:", result)
 
-except InvalidEmailError as e:
-    print("Error:", e)
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero!")
 
-except Exception as e:
-    print("Unexpected error:", e)
+except ValueError:
+    print("Error: Please enter valid numbers.")

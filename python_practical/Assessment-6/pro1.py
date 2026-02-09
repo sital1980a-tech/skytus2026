@@ -1,2 +1,5 @@
-for i in range(1, 11):
-    print(i)
+user_string = input("Enter a string: ")
+
+length = len(user_string)
+
+print("The length of the string is:", length)
